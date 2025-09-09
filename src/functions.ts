@@ -60,6 +60,6 @@ export function convertYesNo(word: string): boolean | null {
     } else if (lowerWord === "no") {
         return false;
     } else {
-        return true;
+        return null;
     }
 }
