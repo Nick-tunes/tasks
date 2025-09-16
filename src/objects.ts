@@ -92,8 +92,8 @@ export function toMarkdown(question: Question): string {
  * `newName`.
  */
 export function renameQuestion(question: Question, newName: string): Question {
-    question.name = newName;
-    return question;
+    const newQ: Question = { ...question, name: newName };
+    return newQ;
 }
 
 /**
@@ -127,8 +127,9 @@ export function duplicateQuestion(id: number, oldQuestion: Question): Question {
  * Check out the subsection about "Nested Fields" for more information.
  */
 export function addOption(question: Question, newOption: string): Question {
-    question.options = [...question.options, newOption];
-    return question;
+    const newQ: Question = { ...question, options: question.options };
+    newQ.options = [...newQ.options, newOption];
+    return newQ;
 }
 
 /**
