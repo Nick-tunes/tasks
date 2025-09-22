@@ -114,7 +114,8 @@ export function injectPositive(values: number[]): number[] {
     const totalBeforeNegative = values
         .slice(0, firstNegativeIndex)
         .reduce((acc, num) => acc + num, 0);
-    // make new array with total inserted before the negative number
+    // make new array with total inserted before the negative number (including the negative number)
+    // and then add the rest of the array values from after the negaive number)
     const newArray = [
         ...values.slice(0, firstNegativeIndex + 1),
         totalBeforeNegative,
